@@ -1,0 +1,74 @@
+%----------------------------------------------------------------------
+% standard heading
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{main}[2023/08/31 Addison Howe]
+% \RequirePackage[]{}
+
+%--------------------------------------------------------------
+% packages
+
+\usepackage{mypackages/myoperators}
+\usepackage{mypackages/myletters}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{subfig}
+\usepackage{url}
+\usepackage{anyfontsize}
+\usepackage{placeins}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[style=authoryear,natbib]{biblatex}
+\usepackage[T1]{fontenc}
+\usepackage{ifthen}
+\usepackage{xr}
+
+%----------------------------------------------------------------------
+% comment functions
+
+\newboolean{HIDETODOSMAIN}
+\newboolean{HIDESIGNPOSTSMAIN}
+\newboolean{HIDENOTESMAIN}
+\setboolean{HIDETODOSMAIN}{true}
+\setboolean{HIDESIGNPOSTSMAIN}{true}
+\setboolean{HIDENOTESMAIN}{true}
+
+\DeclareRobustCommand{\todo}[1]{%
+\ifthenelse{\boolean{HIDETODOSMAIN}}{\ignorespaces}{{\color{red}[TODO: #1]}}
+}
+\DeclareRobustCommand{\signpost}[1]{%
+\ifthenelse{\boolean{HIDESIGNPOSTSMAIN}}{\ignorespaces}{{\color{blue}<#1>}}
+}
+\DeclareRobustCommand{\note}[1]{%
+\ifthenelse{\boolean{HIDENOTESMAIN}}{\ignorespaces}{{\color{cyan}<#1>}}
+}
+
+%----------------------------------------------------------------------
+% supplemental materials
+
+\newcommand{\siref}[1]{SI: \ref{#1}}
+
+%----------------------------------------------------------------------
+% input local configurations
+
+\InputIfFileExists{main.cfg}{}{}
+
+%----------------------------------------------------------------------
+% formatting options
+
+
+
+%----------------------------------------------------------------------
+% table of contents
+
+
+
+%----------------------------------------------------------------------
+
+\endinput

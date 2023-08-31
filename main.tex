@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{main}
+
+\graphicspath{{images}{images/main}}
+\addbibresource{references.bib}
+\externaldocument[si:]{supplement}
+
+\setboolean{HIDETODOSMAIN}{true}  % hide todos
+\setboolean{HIDENOTESMAIN}{true}  % hide notes
+\setboolean{HIDESIGNPOSTSMAIN}{true}  % hide signposts
+
+%--------------------------------------------------------------
+%  document information
+
+\title{Title}
+\author{Addison Howe}
+\date{}
+
+\begin{document}
+\maketitle
+
+%--------------------------------------------------------------
+%  main body
+
+\section{Abstract}
+
+The abstract. \todo{here's a todo.} \note{here's a note.} \signpost{here's a signpost.}
+
+\section{Introduction}
+
+The introduction, with citations to \citep{placeholder-ref1} and \citep{placeholder-ref2}. 
+Also, reference main figure \ref{fig:fig1a} and supplemental figure \siref{si:fig:fig1}
+
+\begin{figure}
+    \centering
+    \subfloat[]{\includegraphics[width=0.25\textwidth]{images/placeholder.png}\label{fig:fig1a}}
+    \subfloat[]{\includegraphics[width=0.25\textwidth]{images/placeholder.png}\label{fig:fig1b}}
+
+    \subfloat[]{\includegraphics[width=0.25\textwidth]{images/placeholder.png}\label{fig:fig1c}}
+    \subfloat[]{\includegraphics[width=0.25\textwidth]{images/placeholder.png}\label{fig:fig1d}}
+    
+    \caption{%
+        \textbf{(a)} 
+        Text...
+        %
+        \textbf{(b)} 
+        Text...
+        %
+        \textbf{(c)} 
+        Text...
+        %
+        \textbf{(d)} 
+        Text...
+        %
+    }
+    \label{fig:fig1}
+\end{figure}
+
+
+%--------------------------------------------------------------
+%  Results Section
+
+\section{Results}
+
+The results, referencing figure \ref{fig:fig1} and \ref{fig:fig1a}...
+
+
+%--------------------------------------------------------------
+%  Discussion Section
+
+\section{Discussion}
+
+The discussion...
+
+
+%--------------------------------------------------------------
+%  Conclusion
+
+\section{Conclusion}
+
+The conclusion...
+
+%--------------------------------------------------------------
+%  References
+
+\printbibliography
+
+\end{document}

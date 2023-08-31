@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{supplement}
+
+\graphicspath{{images}{images/supplement}}
+\addbibresource{references.bib}
+\externaldocument[main:]{main}
+
+\setboolean{HIDETODOSSUPPLEMENT}{false}  % hide todos
+\setboolean{HIDENOTESSUPPLEMENT}{false}  % hide notes
+\setboolean{HIDESIGNPOSTSSUPPLEMENT}{false}  % hide signposts
+
+%--------------------------------------------------------------
+%  document information
+
+\title{Title (Supplemental Information)}
+\author{Addison Howe}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+%--------------------------------------------------------------
+%  main body
+
+\section{Introduction} \label{introduction}
+
+The introduction, with citations to \citep{placeholder-ref1} and \citeauthor{placeholder-ref2}.
+
+\section{A section}
+
+Something here, like a figure\dots.
+Reference the main figure \ref{main:fig:fig1a} and the supplemental figure \ref{fig:fig1a}.
+
+\begin{figure}
+    \centering
+    \subfloat[]{\includegraphics[width=0.25\textwidth]{images/placeholder.png}\label{fig:fig1a}}
+    \subfloat[]{\includegraphics[width=0.25\textwidth]{images/placeholder.png}\label{fig:fig1b}}
+
+    \subfloat[]{\includegraphics[width=0.25\textwidth]{images/placeholder.png}\label{fig:fig1c}}
+    \subfloat[]{\includegraphics[width=0.25\textwidth]{images/placeholder.png}\label{fig:fig1d}}
+    
+    \caption{%
+        \textbf{(a)} 
+        Text...
+        %
+        \textbf{(b)} 
+        Text...
+        %
+        \textbf{(c)} 
+        Text...
+        %
+        \textbf{(d)} 
+        Text...
+        %
+    }
+    \label{fig:fig1}
+\end{figure}
+
+
+
+%--------------------------------------------------------------
+%  References
+
+\newpage
+\printbibliography
+
+\end{document}

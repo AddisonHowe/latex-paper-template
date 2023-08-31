@@ -1,0 +1,44 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mypackages/myoperators}[2020/9/21]
+
+%~~~Packages~~~%
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{mathtools}
+
+%~~~Operators~~~%
+\renewcommand\Im{{\operatorname{Im}}}
+\renewcommand\Re{{\operatorname{Re}}}
+\newcommand\trace{\operatorname{trace}}
+\newcommand\supp{\operatorname{supp}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand\dist{\operatorname{dist}}
+\newcommand\Span{\operatorname{Span}}
+\newcommand\sgn{\operatorname{sgn}}
+\newcommand\dive{\operatorname{div}}
+\newcommand\ran{\operatorname{ran}}
+\newcommand\dom{\operatorname{dom}}
+\newcommand\argmax{\operatorname{argmax}}
+\newcommand\len{\operatorname{len}}
+\renewcommand\mod{\operatorname{mod}}
+
+%~~~Paired Delimiters~~~%
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
+\newcommand{\brac}[1]{\left[#1\right]}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\absv}[1]{\left|#1\right|}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\newcommand{\exppar}[1]{\exp\left(#1\right)}
+\newcommand{\bigo}[1]{\mathcal{O}\left(#1\right)}
+\newcommand*{\dx}[1][x]{\;d#1}
+\newcommand*{\ddx}[1][x]{\frac{d}{d#1}}
+\newcommand*{\ddxbrac}[2][x]{\frac{d}{d#1}\left[#2\right]}
+\newcommand*{\ddxfrac}[2][x]{\frac{d#2}{d#1}}
+\newcommand{\integ}[2][x]{\int #2\;d#1}
+\newcommand{\integdef}[4][x]{\int_{#2}^{#3} #4\;d#1}
+\newcommand{\comment}[2][1]{\hspace{#1cm}\text{(#2)}}
+
+\endinput

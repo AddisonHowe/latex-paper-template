@@ -1,0 +1,76 @@
+%----------------------------------------------------------------------
+% standard heading
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{supplement}[2023/08/31 Addison Howe]
+% \RequirePackage[]{}
+
+%--------------------------------------------------------------
+% packages
+
+\usepackage{mypackages/myoperators}
+\usepackage{mypackages/myletters}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{subfig}
+\usepackage{url}
+\usepackage{anyfontsize}
+\usepackage{placeins}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[style=authoryear,natbib]{biblatex}
+\usepackage[T1]{fontenc}
+\usepackage{ifthen}
+\usepackage{xr}
+
+%----------------------------------------------------------------------
+% comment functions
+
+\newboolean{HIDETODOSSUPPLEMENT}
+\newboolean{HIDESIGNPOSTSSUPPLEMENT}
+\newboolean{HIDENOTESSUPPLEMENT}
+\setboolean{HIDETODOSSUPPLEMENT}{true}
+\setboolean{HIDESIGNPOSTSSUPPLEMENT}{true}
+\setboolean{HIDENOTESSUPPLEMENT}{true}
+
+\DeclareRobustCommand{\todo}[1]{%
+\ifthenelse{\boolean{HIDETODOSSUPPLEMENT}}{\ignorespaces}{{\color{red}[TODO: #1]}}
+}
+\DeclareRobustCommand{\signpost}[1]{%
+\ifthenelse{\boolean{HIDESIGNPOSTSSUPPLEMENT}}{\ignorespaces}{{\color{blue}<#1>}}
+}
+\DeclareRobustCommand{\note}[1]{%
+\ifthenelse{\boolean{HIDENOTESSUPPLEMENT}}{\ignorespaces}{{\color{cyan}<#1>}}
+}
+
+%----------------------------------------------------------------------
+% prefix supplemental materials
+
+\renewcommand\thesection{S\@arabic\c@section}
+\renewcommand\thetable{S\@arabic\c@table}
+\renewcommand\thefigure{S\@arabic\c@figure}
+
+%----------------------------------------------------------------------
+% input local configurations
+
+\InputIfFileExists{supplement.cfg}{}{}
+
+%----------------------------------------------------------------------
+% formatting options
+
+
+
+%----------------------------------------------------------------------
+% table of contents
+
+
+
+%----------------------------------------------------------------------
+
+\endinput
